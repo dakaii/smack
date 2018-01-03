@@ -1,9 +1,11 @@
-package dakaii.smack
+package dakaii.smack.Controllers
 
 import android.graphics.Color
 import android.support.v7.app.AppCompatActivity
 import android.os.Bundle
 import android.view.View
+import dakaii.smack.R
+import dakaii.smack.Services.AuthService
 import kotlinx.android.synthetic.main.activity_create_user.*
 import java.util.*
 
@@ -47,6 +49,10 @@ class CreateUserActivity : AppCompatActivity() {
     }
 
     fun createUserClicked(view: View) {
+        AuthService.registerUser(this, "j@m.com", "123") {complete ->
+            if (complete) {
 
+            }
+        }
     }
 }
